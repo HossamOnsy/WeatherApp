@@ -1,13 +1,17 @@
 package com.sam.iotblue.ui.fragments
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.sam.iotblue.R
+import com.sam.iotblue.model.Coord
+import com.sam.iotblue.ui.adapters.BookmarkedCoordsAdapter
+import com.sam.iotblue.utils.AppUtils.getListOfCoords
+import kotlinx.android.synthetic.main.bookmark_list_fragment.*
 
 class BookmarkListFragment : Fragment() {
 
@@ -16,6 +20,8 @@ class BookmarkListFragment : Fragment() {
     }
 
     private lateinit var viewModel: BookmarkListViewModel
+    lateinit var bookmarkedCoordsAdapter: BookmarkedCoordsAdapter
+    var coordsList = ArrayList<Coord>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +34,34 @@ class BookmarkListFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(BookmarkListViewModel::class.java)
         // TODO: Use the ViewModel
+        recyclerInitation()
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        if (activity != null) {
+            bookmarkedCoordsAdapter.clearList()
+            bookmarkedCoordsAdapter.updateList(getListOfCoords(activity!!.applicationContext))
+
+        }
+    }
+
+    private fun recyclerInitation() {
+        recycler_view.apply {
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(activity)
+            setUpRecyclerAdapter(coordsList)
+        }
+    }
+
+    fun setUpRecyclerAdapter(requests: ArrayList<Coord>) {
+        recycler_view.adapter = null
+        bookmarkedCoordsAdapter = BookmarkedCoordsAdapter(
+            requests, activity!!.baseContext
+        )
+//        (recycler_view.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
+        recycler_view.adapter = bookmarkedCoordsAdapter
     }
 
 }
