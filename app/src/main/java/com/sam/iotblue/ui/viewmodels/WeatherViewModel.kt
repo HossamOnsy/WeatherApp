@@ -1,4 +1,4 @@
-package com.sam.iotblue.ui.activities
+package com.sam.iotblue.ui.viewmodels
 
 import android.view.View
 import androidx.lifecycle.MutableLiveData

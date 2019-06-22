@@ -82,6 +82,8 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$dagger2_version"
     compileOnly "org.glassfish:javax.annotation:3.1.1"
 
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
     //Debugging
     implementation "com.jakewharton.timber:timber:$timber_Version"
 }

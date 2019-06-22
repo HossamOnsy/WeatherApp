@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.airbnb.lottie.utils.Utils
 import com.sam.iotblue.R
 import com.sam.iotblue.model.Coord
 import com.sam.iotblue.ui.activities.TodaysWeatherActivity

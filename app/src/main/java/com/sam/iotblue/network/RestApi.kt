@@ -4,7 +4,6 @@ package com.sam.iotblue.network
 import com.sam.iotblue.model.WeatherResponseModel
 import com.sam.iotblue.utils.APP_ID
 import io.reactivex.Observable
-import org.json.JSONObject
 import retrofit2.http.GET
 import retrofit2.http.Query
 

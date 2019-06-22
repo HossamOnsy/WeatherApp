@@ -1,16 +1,11 @@
 package com.sam.iotblue.utils
 
-import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.sam.iotblue.model.Coord
-import android.graphics.ColorSpace.Model
-import com.airbnb.lottie.LottieCompositionFactory.fromJson
-
-
 
 
 // Made is as a Util Function so later on it would used whenever an Exchanging Rate is required
