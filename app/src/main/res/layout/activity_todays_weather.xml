@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="32sp"
+        android:layout_margin="@dimen/_32sdp"
         tools:context=".ui.activities.TodaysWeatherActivity">
 
 
@@ -65,6 +65,49 @@
             app:layout_constraintTop_toTopOf="@id/tv_min_max_degree"
             app:layout_constraintStart_toEndOf="@id/tv_min_max_degree"
     />
+    <TextView
+            android:id="@+id/tv_wind_speed"
+            android:text="@string/wind_speed"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_min_max_degree"
+            app:layout_constraintStart_toStartOf="parent"
+    />
+
+    <TextView
+            android:id="@+id/tv_wind_speed_value"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/tv_wind_speed"
+            app:layout_constraintStart_toEndOf="@id/tv_wind_speed"
+    />
+    <TextView
+            android:id="@+id/tv_wind_deg"
+            android:text="@string/wind_degree"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_wind_speed"
+            app:layout_constraintStart_toStartOf="parent"
+    />
+
+    <TextView
+            android:id="@+id/tv_wind_degree_value"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/tv_wind_deg"
+            app:layout_constraintStart_toEndOf="@id/tv_wind_deg"
+    />
+    <TextView
+            android:id="@+id/tv_rain_percent"
+            android:text="@string/rain_chances"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_wind_deg"
+            app:layout_constraintStart_toStartOf="parent"
+    />
+
+    <TextView
+            android:id="@+id/tv_rain_percent_value"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/tv_rain_percent"
+            app:layout_constraintStart_toEndOf="@id/tv_rain_percent"
+    />
+
     <ProgressBar
             android:id="@+id/progress_bar"
             android:visibility="gone"

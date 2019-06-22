@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.sam.iotblue.R
+import com.sam.iotblue.ui.viewmodels.WeatherViewModel
 import kotlinx.android.synthetic.main.activity_todays_weather.*
 
 class TodaysWeatherActivity : AppCompatActivity() {
@@ -62,6 +63,16 @@ class TodaysWeatherActivity : AppCompatActivity() {
                 tv_weather_value.text = "${it.weather?.get(0)?.main}"
                 tv_weather_desc_value.text = "${it.weather?.get(0)?.description}"
                 tv_humidity_value.text = "${it.main?.humidity}"
+                tv_wind_speed_value.text = "${it.wind?.speed}"
+                tv_wind_degree_value.text = "${it.wind?.deg}"
+
+
+                if (it.rain?.h != null)
+                    tv_rain_percent_value.text="${it.rain.h}"
+                else
+                    tv_rain_percent.visibility= View.GONE
+
+
                 if (it.main?.temp != null)
                     tv_min_max_degree_value.text = "${it.main.temp}"
                 else

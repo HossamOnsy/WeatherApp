@@ -5,4 +5,9 @@
     <string name="today_s_weather">Today\'s Weather :</string>
     <string name="humidity">Humidity :</string>
     <string name="min_max_temp">Temp :</string>
+    <string name="latitude">Latitude :</string>
+    <string name="longitude">Longitude :</string>
+    <string name="wind_degree">Wind Degree :</string>
+    <string name="wind_speed">Wind Speed :</string>
+    <string name="rain_chances">Rain Chances :</string>
 </resources>

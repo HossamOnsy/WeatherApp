@@ -20,6 +20,8 @@ data class WeatherResponseModel(
     val main: Main?,
     @Json(name = "name")
     val name: String?,
+    @Json(name = "rain")
+    val rain: Rain?,
     @Json(name = "sys")
     val sys: Sys?,
     @Json(name = "timezone")
