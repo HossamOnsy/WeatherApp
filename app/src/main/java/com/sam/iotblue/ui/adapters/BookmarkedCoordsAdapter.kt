@@ -52,8 +52,8 @@ class BookmarkedCoordsAdapter(var list: ArrayList<Coord>,var context : Context) 
 
         holder.itemView.setOnClickListener {
             context.startActivity(Intent(context,TodaysWeatherActivity::class.java)
-                .putExtra("lat",list.get(position).lat)
-                .putExtra("lon",list.get(position).lon)
+                .putExtra("lat",list.get(position).lat.toString())
+                .putExtra("lon",list.get(position).lon.toString())
             )
         }
     }

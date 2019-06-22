@@ -3,13 +3,20 @@ package com.sam.iotblue.base
 import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 
 open class BaseViewModel : ViewModel() {
 
 
     val loadingVisibility: MutableLiveData<Int> = MutableLiveData()
     val errorMessage: MutableLiveData<String> = MutableLiveData()
+    internal var subscription: Disposable
 
+    init {
+        subscription = CompositeDisposable()
+
+    }
 
     fun onRetrieveDataError(error: Throwable?) {
 
@@ -31,5 +38,9 @@ open class BaseViewModel : ViewModel() {
         loadingVisibility.value = View.VISIBLE
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        subscription.dispose()
+    }
 
 }

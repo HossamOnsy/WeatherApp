@@ -35,38 +35,30 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTabUnselected(tab: TabLayout.Tab) {
                 // setAdapter();
-
-
             }
 
             override fun onTabReselected(tab: TabLayout.Tab) {
-
                 //   viewPager.notifyAll();
             }
         })
     }
 
     private fun  initViews(){
-        viewPager = findViewById<ViewPager>(R.id.pager)
-        tabLayout = findViewById<TabLayout>(R.id.tabs)
+        viewPager = findViewById(R.id.pager)
+        tabLayout = findViewById(R.id.tabs)
     }
 
     private fun setStatePageAdapter(){
 
         val myViewPageStateAdapter = MyViewPageStateAdapter(supportFragmentManager)
-        myViewPageStateAdapter.addFragment(MapFragment(),"Map")
-        myViewPageStateAdapter.addFragment(BookmarkListFragment(),"Bookmarks")
+        myViewPageStateAdapter.addFragment(MapFragment.newInstance(),"Map")
+        myViewPageStateAdapter.addFragment(BookmarkListFragment.newInstance(),"Bookmarks")
 
         viewPager.adapter=myViewPageStateAdapter
         tabLayout.setupWithViewPager(viewPager,true)
-//        setTabIcons()
+
 
     }
-
-//    private fun setTabIcons() {
-//
-//    }
-
 
 }
 

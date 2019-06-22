@@ -24,7 +24,6 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         fun newInstance() = MapFragment()
     }
 
-    private lateinit var viewModel: MapViewModel
     private lateinit var mMap: GoogleMap
     var firstTime = true
 
@@ -37,8 +36,6 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MapViewModel::class.java)
-        // TODO: Use the ViewModel
         val mapFragment = childFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)

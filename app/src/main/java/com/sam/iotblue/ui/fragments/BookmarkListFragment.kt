@@ -19,7 +19,6 @@ class BookmarkListFragment : Fragment() {
         fun newInstance() = BookmarkListFragment()
     }
 
-    private lateinit var viewModel: BookmarkListViewModel
     lateinit var bookmarkedCoordsAdapter: BookmarkedCoordsAdapter
     var coordsList = ArrayList<Coord>()
 
@@ -32,8 +31,7 @@ class BookmarkListFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(BookmarkListViewModel::class.java)
-        // TODO: Use the ViewModel
+
         recyclerInitation()
     }
 
