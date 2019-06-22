@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">IoTBlue</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="description">Description :</string>
+    <string name="today_s_weather">Today\'s Weather :</string>
+    <string name="humidity">Humidity :</string>
+    <string name="min_max_temp">Temp :</string>
 </resources>
